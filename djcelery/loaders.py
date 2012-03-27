@@ -92,17 +92,7 @@ class DjangoLoader(BaseLoader):
         autodiscover()
 
     def mail_admins(self, subject, body, fail_silently=False, **kwargs):
-        from django.conf import settings
-        return BaseLoader.mail_admins(
-            self,
-            subject=subject,
-            body=body,
-            fail_silently=fail_silently,
-            to=settings.ADMIN_EMAIL_ADDRESS,
-            port=settings.ADMIN_EMAIL_PORT,
-            host=settings.ADMIN_EMAIL_HOST,
-        )
-        #return mail_admins(subject, body, fail_silently=fail_silently)
+        return mail_admins(subject, body, fail_silently=fail_silently)
 
 
 def autodiscover():
