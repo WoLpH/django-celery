@@ -92,7 +92,10 @@ class DjangoLoader(BaseLoader):
         autodiscover()
 
     def mail_admins(self, subject, body, fail_silently=False, **kwargs):
-        return mail_admins(subject, body, fail_silently=fail_silently)
+        pass
+        # TODO: maybe fix this some day in the fugure, but now it's just
+        # killing our mail
+        # return mail_admins(subject, body, fail_silently=fail_silently)
 
 
 def autodiscover():
